@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>demo for sinovision</title>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" /> 
+<meta content="yes" name="apple-mobile-web-app-capable" /> 
+<meta content="black" name="apple-mobile-web-app-status-bar-style" /> 
+<meta content="telephone=no" name="format-detection" />
+
+	<script src="flowplayer-3.2.11.min.js"></script>
+	<script src="flowplayer.ipad-3.2.12.min.js"></script>
+	
+
+</head>
+
+<body id="plugins" style="margin:0">
+
+
+   <div style="width:320px;height:210px;margin:10px auto"> 
+    <a href="" style="display:block;width:320x;height:210px;" id="player"> </a> 
+  </div>
+    <script type="text/javascript">
+flowplayer("player", "flowplayer-3.2.15.swf", {
+    // configure the required plugins
+    plugins:  {
+    
+        httpstreaming: {
+            url: 'flowplayer.httpstreaminghls-3.2.10.swf'
+        }
+
+    },
+
+
+    clip: {
+        url: "list.m3u8",
+        ipadUrl: "list.m3u8",
+        urlResolvers: "httpstreaming",
+        provider: "httpstreaming"
+    },
+    log: {
+        level: 'debug',
+        filter: 'org.electroteque.m3u8.*'
+    }
+
+}).ipad();
+
+
+
+
+
+</script>
+</body>
+</html>
